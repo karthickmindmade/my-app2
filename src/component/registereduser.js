@@ -53,6 +53,8 @@ export default function RegisteredUser() {
                         <th>organizationType</th>
                         <th>phone</th>
                         <th>state</th>
+                        <th>emailAddress</th>
+                        
                         <th className="bg-red">ProjectId</th>
                     </tr>
                     {RegisteredUsers.registeredUsers.map((member) =>
@@ -66,6 +68,8 @@ export default function RegisteredUser() {
                             <td>{member.organizationType}</td>
                             <td>{member.phone}</td>
                             <td>{member.state}</td>
+                            <td>{member.emailAddress}</td>
+                            
                             <td>
                             <ProjectId userid={member.id} />
                                 </td>
