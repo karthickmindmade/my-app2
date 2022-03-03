@@ -1,7 +1,7 @@
 import actions from "./actions";
 
 const initialState = {
-    registeredUsers = []
+    registeredUsers : []
 };
 
 const registeredUserReducer = (state = initialState, action) => {
@@ -10,7 +10,7 @@ const registeredUserReducer = (state = initialState, action) => {
       return {
         ...state,
         registeredUsers: action.payload
-      };
+      }
     default:
       return state;
   }
