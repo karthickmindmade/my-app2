@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
-import {  useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/users/actions";
+import { Link } from "react-router-dom";
+import ProjectId from "./registereduser/projectId";
 import unregisteredUserActions from '../redux/unregistereduser/actions';
 import projectMembershipActions from '../redux/projectmembership/actions';
 
-export default function RegisteredUserReducer(){
-    
+export default function RegisteredUser() {
+
     const dispatch = useDispatch();
 
     const RegisteredUsers = useSelector(
@@ -29,11 +31,48 @@ export default function RegisteredUserReducer(){
         dispatch({ type : projectMembershipActions.GET_ALL_PROJECTMEMBERSHIP});
     },[])
    
-    return(
+      
+    return (
         <div>
-            {RegisteredUsers.registeredUsers.map((user)=>
-                <div key={user.id}>{user.city}</div>
-            )}
+            <div className="page-body">
+                <div className="nav">
+                    <Link className="tab" to='/' >ProjectMembers</Link>
+                    <br />
+                    <a className="tab active">RegisteredUser</a>
+                    <br />
+                    <Link className="tab" to="/component/unregisteredUser">unRegisteredUser</Link>
+                </div>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>city</th>
+                        <th>company</th>
+                        <th>country</th>
+                        <th>firstName</th>
+                        <th>lastName</th>
+                        <th>organizationType</th>
+                        <th>phone</th>
+                        <th>state</th>
+                        <th className="bg-red">ProjectId</th>
+                    </tr>
+                    {RegisteredUsers.registeredUsers.map((member) =>
+                        <tr>
+                            <td>{member.id}</td>
+                            <td>{member.city}</td>
+                            <td>{member.company}</td>
+                            <td>{member.country}</td>
+                            <td>{member.firstName}</td>
+                            <td>{member.lastName}</td>
+                            <td>{member.organizationType}</td>
+                            <td>{member.phone}</td>
+                            <td>{member.state}</td>
+                            <td>
+                            <ProjectId userid={member.id} />
+                                </td>
+                        </tr>
+                    )}
+                </table>
+            </div>
         </div>
     )
 }
