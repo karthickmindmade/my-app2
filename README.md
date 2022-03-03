@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+### TEST DOCUMENTATON
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  FILE STRUCTURE :
 
-## Available Scripts
+	src/
+	    component/
+		  registereduser.js
+	    redux/
+		  projectmembership/
+			actions.js
+			reducers.js
+			sagas.js
+		   unregistereduser/
+			actions.js
+			reducers.js
+			sagas.js
+		   users/
+			actions.js
+			reducers.js
+			sagas.js
+	        reducers.js
+	        sagas.js
+	        store.js
+	    utils/
+		constants.js
+	    App.js
+	
+ 
 
-In the project directory, you can run:
+ ### src/component/registereduser.js
+	
+	Get all data's from given three api's and display the output.
+	Use useSelector for get the api data's.
+	Use useDispatch for dispatch the actions.
 
-### `npm start`
+ ### src/redux/projectmembership/actions.js
+	
+	Define the action type and actions for projectmembership api.
+	Action types are used to identify the corresponding reducer from the action.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ ### src/redux/projectmembership/reducers.js
+	
+	Implement the behavior of the actions for projectmembership api.
+	Reducers are functions that take the current state and an action as arguments, and return a new state result.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ ### src/redux/projectmembership/sagas.js
 
-### `npm test`
+	 It connect it to the Redux Store using the redux-saga middleware.
+	 It provides a third-party extension point between dispatching an action, and the moment it reaches the reducer.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ ### src/redux/unregistereduser/actions.js
 
-### `npm run build`
+	Define the actions for unregistereduser api.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ ### src/redux/unregistereduser/reducers.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+	Implement the behavior of the actions for unregistereduser api.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+###  src/redux/unregistereduser/sagas.js
 
-### `npm run eject`
+	connect it to the Redux Store using the redux-saga middleware.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ ### src/redux/users/actions.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+	Define the actions for registereduser api.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ ### src/redux/users/reducers.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+	Implement the behavior of the actions for registereduser api.
 
-## Learn More
+ ### src/redux/users/sagas.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+	connect it to the Redux Store using the redux-saga middleware.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ ### src/redux/reducers.js
 
-### Code Splitting
+	Combine all reducers in one file.
+ 
+ ### src/redux/sagas.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+	Combine all sagas in one file.
 
-### Analyzing the Bundle Size
+ ### src/redux/store.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+	create redux store.
+	Holds the current application state inside.
+	The Redux store brings together the state, actions, and reducers 
 
-### Making a Progressive Web App
+ ### utils/constants.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+	Export the url.
 
-### Advanced Configuration
+ ### src/App.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+	Provide the redux store to all components using Provider tag.
 
-### Deployment
+ ### INSTALLED PACKAGES :
+		
+	1. React
+	2. react-redux
+	3. redux
+	4. redux-saga
+	5. react-router-dom
+	6. axios
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
